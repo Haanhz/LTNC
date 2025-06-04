@@ -1,0 +1,14 @@
+D:\HaAnh\code\ChatClient\bin\Debug\net8.0-windows\ChatClient.exe
+D:\HaAnh\code\ChatClient\bin\Debug\net8.0-windows\ChatClient.deps.json
+D:\HaAnh\code\ChatClient\bin\Debug\net8.0-windows\ChatClient.runtimeconfig.json
+D:\HaAnh\code\ChatClient\bin\Debug\net8.0-windows\ChatClient.dll
+D:\HaAnh\code\ChatClient\bin\Debug\net8.0-windows\ChatClient.pdb
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\ChatClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\ChatClient.AssemblyInfoInputs.cache
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\ChatClient.AssemblyInfo.cs
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\ChatClient.csproj.CoreCompileInputs.cache
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\ChatClient.dll
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\refint\ChatClient.dll
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\ChatClient.pdb
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\ChatClient.genruntimeconfig.cache
+D:\HaAnh\code\ChatClient\obj\Debug\net8.0-windows\ref\ChatClient.dll
