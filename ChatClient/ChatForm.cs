@@ -61,13 +61,25 @@ public class ChatForm : Form
                         // Nếu là câu hỏi thì hiển thị nổi bật
                         if (msg.StartsWith("Question:"))
                         {
-                            chatBox.Items.Add("====== CÂU HỎI ======");
+                            chatBox.Items.Add("====== Question ======");
                             chatBox.Items.Add(msg);
                             chatBox.Items.Add("====================");
                         }
+                        else if (msg.StartsWith("Final Scores:") || msg.Contains("Winner") || msg.Contains("tie"))
+                        {
+                            chatBox.Items.Add("====== KẾT QUẢ CUỐI CÙNG ======");
+                            foreach (string line in msg.Split('\n'))
+                            {
+                                chatBox.Items.Add("🌟 " + line.Trim());
+                            }
+                            chatBox.Items.Add("===============================");
+                        }
                         else
                         {
-                            chatBox.Items.Add(msg);
+                            foreach (string line in msg.Split('\n'))
+                            {
+                                chatBox.Items.Add(line.Trim());
+                            }
                         }
                     }));
                 }
