@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HaAnh\\code\\ChatServer\\ChatServer.csproj",
+      "projectUniqueName": "D:\\HaAnh\\code\\LTNC\\ChatServer\\ChatServer.csproj",
       "projectName": "ChatServer",
-      "projectPath": "D:\\HaAnh\\code\\ChatServer\\ChatServer.csproj",
+      "projectPath": "D:\\HaAnh\\code\\LTNC\\ChatServer\\ChatServer.csproj",
       "packagesPath": "C:\\Users\\Nguyen Ha Anh\\.nuget\\packages\\",
-      "outputPath": "D:\\HaAnh\\code\\ChatServer\\obj\\",
+      "outputPath": "D:\\HaAnh\\code\\LTNC\\ChatServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nguyen Ha Anh\\AppData\\Roaming\\NuGet\\NuGet.Config"

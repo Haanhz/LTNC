@@ -86,7 +86,7 @@ public class ChatForm : Form
         byte[] data = Encoding.UTF8.GetBytes(msg);
         stream.Write(data, 0, data.Length);
 
-        chatBox.Items.Add("Me: " + msg);
+        chatBox.Items.Add(userName + ": " + msg);
         inputBox.Clear();
 
         if (msg.ToLower() == "bye")
