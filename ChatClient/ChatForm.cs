@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 public class ChatForm : Form
 {
+    private string userName;
+
     private TextBox inputBox;
     private Button sendBtn;
     private ListBox chatBox;
@@ -15,7 +17,7 @@ public class ChatForm : Form
 
     public ChatForm()
     {
-        this.Text = "Chat Client";
+        this.Text = "Quiz Client";
         this.Width = 400;
         this.Height = 400;
 
@@ -29,6 +31,8 @@ public class ChatForm : Form
         Controls.Add(inputBox);
         Controls.Add(sendBtn);
 
+        userName = Prompt.ShowDialog("Nhập tên người dùng:", "Đăng nhập");
+
         ConnectToServer();
     }
 
@@ -36,6 +40,10 @@ public class ChatForm : Form
     {
         client = new TcpClient("127.0.0.1", 8888);
         stream = client.GetStream();
+
+        // Gửi tên người dùng sau khi kết nối
+        byte[] nameData = Encoding.UTF8.GetBytes(userName);
+        stream.Write(nameData, 0, nameData.Length);
 
         Thread receiveThread = new Thread(() =>
         {
@@ -47,9 +55,20 @@ public class ChatForm : Form
                     int len = stream.Read(buffer, 0, buffer.Length);
                     if (len == 0) break;
                     string msg = Encoding.UTF8.GetString(buffer, 0, len);
+
                     this.Invoke(new Action(() =>
                     {
-                        chatBox.Items.Add("Server: " + msg);
+                        // Nếu là câu hỏi thì hiển thị nổi bật
+                        if (msg.StartsWith("Question:"))
+                        {
+                            chatBox.Items.Add("====== CÂU HỎI ======");
+                            chatBox.Items.Add(msg);
+                            chatBox.Items.Add("====================");
+                        }
+                        else
+                        {
+                            chatBox.Items.Add(msg);
+                        }
                     }));
                 }
                 catch { break; }
@@ -61,9 +80,12 @@ public class ChatForm : Form
 
     private void SendBtn_Click(object sender, EventArgs e)
     {
-        string msg = inputBox.Text;
+        string msg = inputBox.Text.Trim();
+        if (string.IsNullOrEmpty(msg)) return;
+
         byte[] data = Encoding.UTF8.GetBytes(msg);
         stream.Write(data, 0, data.Length);
+
         chatBox.Items.Add("Me: " + msg);
         inputBox.Clear();
 
@@ -72,6 +94,34 @@ public class ChatForm : Form
             stream.Close();
             client.Close();
             Application.Exit();
+        }
+    }
+
+    // Hộp thoại nhập tên người dùng
+    public static class Prompt
+    {
+        public static string ShowDialog(string text, string caption)
+        {
+            Form prompt = new Form()
+            {
+                Width = 300,
+                Height = 150,
+                Text = caption
+            };
+            Label lbl = new Label() { Left = 10, Top = 10, Text = text };
+            TextBox txt = new TextBox() { Left = 10, Top = 40, Width = 250 };
+            Button confirm = new Button() { Text = "OK", Left = 180, Width = 80, Top = 70 };
+
+            string result = "";
+            confirm.Click += (sender, e) => { result = txt.Text; prompt.Close(); };
+
+            prompt.Controls.Add(lbl);
+            prompt.Controls.Add(txt);
+            prompt.Controls.Add(confirm);
+            prompt.AcceptButton = confirm;
+
+            prompt.ShowDialog();
+            return result;
         }
     }
 }
