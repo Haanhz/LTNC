@@ -12,28 +12,145 @@ public class ChatForm : Form
     private Button sendBtn;
     private ListBox chatBox;
 
-    TcpClient client;
-    NetworkStream stream;
+    private TcpClient? client;
+    private NetworkStream? stream;
 
     public ChatForm()
     {
         this.Text = "Quiz Client";
-        this.Width = 400;
-        this.Height = 400;
+        this.Width = 520;
+        this.Height = 620;
+        this.FormBorderStyle = FormBorderStyle.FixedDialog;
+        this.MaximizeBox = false;
+        this.BackColor = System.Drawing.Color.FromArgb(18, 32, 47); // Deep tech blue
 
-        chatBox = new ListBox() { Top = 10, Left = 10, Width = 360, Height = 250 };
-        inputBox = new TextBox() { Top = 270, Left = 10, Width = 260 };
-        sendBtn = new Button() { Text = "Send", Top = 270, Left = 280, Width = 90 };
+        Label title = new Label()
+        {
+            Text = "⎓ QUIZ GAME CLIENT ⎓",
+            Font = new System.Drawing.Font("Consolas", 22, System.Drawing.FontStyle.Bold),
+            ForeColor = System.Drawing.Color.Cyan,
+            AutoSize = false,
+            TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+            Top = 18,
+            Left = 18,
+            Width = 470,
+            Height = 50
+        };
+
+        Panel borderPanel = new Panel()
+        {
+            Top = 85,
+            Left = 18,
+            Width = 470,
+            Height = 430, // tăng chiều cao panel
+            BackColor = System.Drawing.Color.FromArgb(28, 41, 56),
+            BorderStyle = BorderStyle.FixedSingle
+        };
+
+        chatBox = new ListBox()
+        {
+            Top = 10,
+            Left = 10,
+            Width = 450,
+            Height = 410, // tăng chiều cao chatbox
+            Font = new System.Drawing.Font("Consolas", 11, System.Drawing.FontStyle.Bold), // giảm font size
+            BackColor = System.Drawing.Color.FromArgb(10, 10, 20),
+            ForeColor = System.Drawing.Color.Lime,
+            BorderStyle = BorderStyle.None
+        };
+        borderPanel.Controls.Add(chatBox);
+
+        Label inputLabel = new Label()
+        {
+            Text = "Gõ câu trả lời hoặc chat (ENTER để gửi):",
+            Top = 525,
+            Left = 18,
+            Width = 470,
+            Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Italic),
+            ForeColor = System.Drawing.Color.Cyan
+        };
+
+        inputBox = new TextBox()
+        {
+            Top = 555,
+            Left = 18,
+            Width = 330,
+            Font = new System.Drawing.Font("Consolas", 13),
+            BackColor = System.Drawing.Color.FromArgb(10, 10, 20),
+            ForeColor = System.Drawing.Color.Lime,
+            BorderStyle = BorderStyle.FixedSingle
+        };
+        sendBtn = new Button()
+        {
+            Text = "SEND ⎓",
+            Top = 553,
+            Left = 360,
+            Width = 128,
+            Height = 40,
+            Font = new System.Drawing.Font("Consolas", 13, System.Drawing.FontStyle.Bold),
+            BackColor = System.Drawing.Color.Cyan,
+            ForeColor = System.Drawing.Color.FromArgb(18, 32, 47),
+            FlatStyle = FlatStyle.Flat
+        };
+        sendBtn.FlatAppearance.BorderSize = 0;
+
+        Label decoLabel = new Label()
+        {
+            Text = "─────────────────────────────────────────────────────────────",
+            Top = 75,
+            Left = 18,
+            Width = 470,
+            Height = 10,
+            ForeColor = System.Drawing.Color.Cyan,
+            Font = new System.Drawing.Font("Consolas", 12, System.Drawing.FontStyle.Bold),
+            TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        };
 
         sendBtn.Click += SendBtn_Click;
+        inputBox.KeyDown += (s, e) => { if (e.KeyCode == Keys.Enter) SendBtn_Click(sendBtn, e); };
 
-        Controls.Add(chatBox);
+        Controls.Add(title);
+        Controls.Add(decoLabel);
+        Controls.Add(borderPanel);
+        Controls.Add(inputLabel);
         Controls.Add(inputBox);
         Controls.Add(sendBtn);
 
         userName = Prompt.ShowDialog("Nhập tên người dùng:", "Đăng nhập");
 
         ConnectToServer();
+
+        // Họa tiết mạch điện tử bằng các đường line và hình chữ nhật nhỏ
+        Panel decorPanel = new Panel()
+        {
+            Top = 85,
+            Left = 0,
+            Width = this.Width,
+            Height = 430,
+            BackColor = System.Drawing.Color.Transparent
+        };
+        decorPanel.Paint += (s, e) =>
+        {
+            var g = e.Graphics;
+            var pen = new System.Drawing.Pen(System.Drawing.Color.Cyan, 2);
+            var pen2 = new System.Drawing.Pen(System.Drawing.Color.Lime, 1);
+            // Vẽ các đường mạch ngang dọc
+            g.DrawLine(pen, 40, 50, 200, 50);
+            g.DrawLine(pen, 200, 50, 200, 350);
+            g.DrawLine(pen, 200, 200, 400, 200);
+            g.DrawLine(pen2, 60, 100, 60, 350);
+            g.DrawLine(pen2, 60, 100, 300, 100);
+            // Vẽ các node mạch
+            g.FillEllipse(System.Drawing.Brushes.Cyan, 195, 45, 10, 10);
+            g.FillEllipse(System.Drawing.Brushes.Lime, 55, 95, 10, 10);
+            g.FillEllipse(System.Drawing.Brushes.Cyan, 295, 95, 10, 10);
+            g.FillEllipse(System.Drawing.Brushes.Lime, 395, 195, 10, 10);
+            // Vẽ chip
+            g.FillRectangle(System.Drawing.Brushes.Cyan, 120, 270, 40, 20);
+            g.DrawRectangle(pen, 120, 270, 40, 20);
+            g.DrawLine(pen2, 140, 290, 140, 350);
+        };
+        borderPanel.Controls.Add(decorPanel);
     }
 
     private void ConnectToServer()
@@ -90,10 +207,10 @@ public class ChatForm : Form
         receiveThread.Start();
     }
 
-    private void SendBtn_Click(object sender, EventArgs e)
+    private void SendBtn_Click(object? sender, EventArgs e)
     {
         string msg = inputBox.Text.Trim();
-        if (string.IsNullOrEmpty(msg)) return;
+        if (string.IsNullOrEmpty(msg) || stream == null || client == null) return;
 
         byte[] data = Encoding.UTF8.GetBytes(msg);
         stream.Write(data, 0, data.Length);

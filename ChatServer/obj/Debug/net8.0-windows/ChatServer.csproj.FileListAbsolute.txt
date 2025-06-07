@@ -27,3 +27,18 @@ D:\HaAnh\code\LTNC\ChatServer\obj\Debug\net8.0-windows\refint\ChatServer.dll
 D:\HaAnh\code\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.pdb
 D:\HaAnh\code\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.genruntimeconfig.cache
 D:\HaAnh\code\LTNC\ChatServer\obj\Debug\net8.0-windows\ref\ChatServer.dll
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\bin\Debug\net8.0-windows\ChatServer.exe
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\bin\Debug\net8.0-windows\ChatServer.deps.json
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\bin\Debug\net8.0-windows\ChatServer.runtimeconfig.json
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\bin\Debug\net8.0-windows\ChatServer.dll
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\bin\Debug\net8.0-windows\ChatServer.pdb
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.AssemblyInfoInputs.cache
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.AssemblyInfo.cs
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.sourcelink.json
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.dll
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\refint\ChatServer.dll
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.pdb
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ChatServer.genruntimeconfig.cache
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatServer\obj\Debug\net8.0-windows\ref\ChatServer.dll

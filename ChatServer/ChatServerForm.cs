@@ -24,11 +24,112 @@ public class ChatServerForm : Form
     public ChatServerForm()
     {
         this.Text = "Quiz Server";
-        this.Width = 500;
-        this.Height = 400;
+        this.Width = 650;
+        this.Height = 620;
+        this.FormBorderStyle = FormBorderStyle.FixedDialog;
+        this.MaximizeBox = false;
+        this.BackColor = System.Drawing.Color.FromArgb(18, 32, 47); // Deep tech blue
 
-        chatBox = new ListBox() { Top = 10, Left = 10, Width = 460, Height = 330 };
-        Controls.Add(chatBox);
+        Label title = new Label()
+        {
+            Text = "⎓ QUIZ GAME SERVER ⎓",
+            Font = new System.Drawing.Font("Consolas", 26, System.Drawing.FontStyle.Bold),
+            ForeColor = System.Drawing.Color.Cyan,
+            AutoSize = false,
+            TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+            Top = 18,
+            Left = 18,
+            Width = 600,
+            Height = 60
+        };
+
+        Panel borderPanel = new Panel()
+        {
+            Top = 85,
+            Left = 18,
+            Width = 600,
+            Height = 420,
+            BackColor = System.Drawing.Color.FromArgb(28, 41, 56),
+            BorderStyle = BorderStyle.FixedSingle
+        };
+
+        chatBox = new ListBox()
+        {
+            Top = 10,
+            Left = 10,
+            Width = 580,
+            Height = 400,
+            Font = new System.Drawing.Font("Consolas", 13, System.Drawing.FontStyle.Bold),
+            BackColor = System.Drawing.Color.FromArgb(10, 10, 20),
+            ForeColor = System.Drawing.Color.Lime,
+            BorderStyle = BorderStyle.None
+        };
+        borderPanel.Controls.Add(chatBox);
+
+        Label statusLabel = new Label()
+        {
+            Text = "⎓ Server đang chạy trên cổng 8888...",
+            Top = 520,
+            Left = 18,
+            Width = 600,
+            Height = 30,
+            Font = new System.Drawing.Font("Consolas", 12, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic),
+            ForeColor = System.Drawing.Color.Cyan,
+            TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        };
+
+        Label decoLabel = new Label()
+        {
+            Text = "─────────────────────────────────────────────────────────────────────────────",
+            Top = 75,
+            Left = 18,
+            Width = 600,
+            Height = 10,
+            ForeColor = System.Drawing.Color.Cyan,
+            Font = new System.Drawing.Font("Consolas", 12, System.Drawing.FontStyle.Bold),
+            TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        };
+
+        Controls.Add(title);
+        Controls.Add(decoLabel);
+        Controls.Add(borderPanel);
+        Controls.Add(statusLabel);
+
+        // Họa tiết mạch điện tử vẽ ở ngoài panel chứa câu hỏi (bên ngoài borderPanel)
+        Panel decorPanel = new Panel()
+        {
+            Top = borderPanel.Top - 10,
+            Left = borderPanel.Left - 30,
+            Width = borderPanel.Width + 60,
+            Height = borderPanel.Height + 60,
+            BackColor = System.Drawing.Color.Transparent
+        };
+        decorPanel.SendToBack();
+        decorPanel.Paint += (s, e) =>
+        {
+            var g = e.Graphics;
+            var pen = new System.Drawing.Pen(System.Drawing.Color.Cyan, 2);
+            var pen2 = new System.Drawing.Pen(System.Drawing.Color.Lime, 1);
+            // Vẽ các đường mạch chạy quanh borderPanel
+            g.DrawLine(pen, 20, 30, 580, 30);
+            g.DrawLine(pen, 580, 30, 580, 420);
+            g.DrawLine(pen, 580, 420, 20, 420);
+            g.DrawLine(pen, 20, 420, 20, 30);
+            // Vẽ các node mạch ở góc
+            g.FillEllipse(System.Drawing.Brushes.Cyan, 15, 25, 10, 10);
+            g.FillEllipse(System.Drawing.Brushes.Lime, 575, 25, 10, 10);
+            g.FillEllipse(System.Drawing.Brushes.Cyan, 575, 415, 10, 10);
+            g.FillEllipse(System.Drawing.Brushes.Lime, 15, 415, 10, 10);
+            // Vẽ chip ở góc trên phải
+            g.FillRectangle(System.Drawing.Brushes.Cyan, 520, 10, 40, 18);
+            g.DrawRectangle(pen, 520, 10, 40, 18);
+            // Vẽ chip ở góc dưới trái
+            g.FillRectangle(System.Drawing.Brushes.Lime, 30, 430, 40, 18);
+            g.DrawRectangle(pen2, 30, 430, 40, 18);
+        };
+        Controls.Add(decorPanel);
+        decorPanel.BringToFront();
+        borderPanel.BringToFront();
 
         ResetQuizData();
         StartServer();

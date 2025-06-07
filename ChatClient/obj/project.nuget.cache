@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "rATgEImz98U=",
+  "dgSpecHash": "FeUZgTG4Pe4=",
   "success": true,
-  "projectFilePath": "D:\\HaAnh\\code\\LTNC\\ChatClient\\ChatClient.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\admin\\OneDrive - Hanoi University of Science and Technology\\Documents\\GitHub\\LTNC\\ChatClient\\ChatClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.16\\microsoft.netcore.app.ref.8.0.16.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.16\\microsoft.windowsdesktop.app.ref.8.0.16.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.16\\microsoft.aspnetcore.app.ref.8.0.16.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.16\\microsoft.netcore.app.host.win-x64.8.0.16.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -27,3 +27,18 @@ D:\HaAnh\code\LTNC\ChatClient\obj\Debug\net8.0-windows\refint\ChatClient.dll
 D:\HaAnh\code\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.pdb
 D:\HaAnh\code\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.genruntimeconfig.cache
 D:\HaAnh\code\LTNC\ChatClient\obj\Debug\net8.0-windows\ref\ChatClient.dll
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\bin\Debug\net8.0-windows\ChatClient.exe
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\bin\Debug\net8.0-windows\ChatClient.deps.json
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\bin\Debug\net8.0-windows\ChatClient.runtimeconfig.json
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\bin\Debug\net8.0-windows\ChatClient.dll
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\bin\Debug\net8.0-windows\ChatClient.pdb
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.AssemblyInfoInputs.cache
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.AssemblyInfo.cs
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.sourcelink.json
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.dll
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\refint\ChatClient.dll
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.pdb
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ChatClient.genruntimeconfig.cache
+C:\Users\admin\OneDrive - Hanoi University of Science and Technology\Documents\GitHub\LTNC\ChatClient\obj\Debug\net8.0-windows\ref\ChatClient.dll
